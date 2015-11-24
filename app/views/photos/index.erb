@@ -1,0 +1,11 @@
+<div id="new-photo-inner-content">
+	
+</div>
+<div class="inner-content">
+	<h1 id="header">Welcome to my to-be-named website, to-be-named with a brilliant name I hope to think of sometime tomorrow.</h1>
+
+	<div>
+	<% @photos.each do |photo| %>
+		<a href="/photos/<%= photo.id %>"><img class="index-photos" src="<%= photo.url%>"/></a>
+	<% end %>
+</div>

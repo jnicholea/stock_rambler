@@ -1,0 +1,14 @@
+
+<div class="inner-content">
+  <h1>Sign Up</h1>
+  <div >
+    <%= p @error %>
+  </div>
+  <form action="/users" method="post">
+    <input type="text" name="business_name" placeholder="Business Name (optional)"/>
+    <input type="text" name="username" placeholder="Username" />
+    <input type="text" name="email" placeholder="Email" />
+    <input type="password" name="password" placeholder="Password" />
+    <input type="submit" value="Sign Up" />
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<div class="inner-content">
+	<div class="photo-show">
+		<img id="ind-photo-show" src="<%= @photo.url%>"/>
+		<p>Photographer: <%= @photo.photographer.business_name %></p>
+		<p>Format: <%= @photo.format %></p>
+		<p>Stock: <%= @photo.stock %></p>
+		<p>Camera: <%= @photo.camera %></p>
+		<p>Lens: <%= @photo.lens %></p>
+		<p>Lighting: <%= @photo.lighting %></p>
+		<p>Rating: <%= @photo.rating %></p>
+		<p>Lab: <%= @photo.lab %></p>
+		<p>Push or Pull?: <%= @photo.processing %></p>
+		<p>Scanner: <%= @photo.scanner %></p>
+		<p>Expired?: <%= @photo.expiration %></p>
+	</div>
+
+	<form action="/photos/<%=@photo.id%>" method="post">
+		<input type="hidden" name = "_method" value="delete">
+		<input type="submit" value="Delete this photo">
+	</form>
+<div class="inner-content">	

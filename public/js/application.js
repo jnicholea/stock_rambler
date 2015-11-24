@@ -1,7 +1,47 @@
-$(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+$(document).ready(function() {
+
+	photoForm();
+	addPhoto();
+  
+
 });
+
+	var photoForm = function(){
+		$("#new-photo").on("click", function(e){
+		e.preventDefault();
+			$('#new-photo').hide();
+
+			var request = $.ajax({
+				method: 'get',
+				url: '/photos/new',
+				data: 'html',
+			})
+
+			request.done(function(data){
+				$('#new-photo-inner-content').append(data)
+			})
+	});
+};
+
+var addPhoto = function(){
+	$("body").on("submit", "#new-photo-form", function(e){
+		e.preventDefault();
+
+		var data = $("#new-photo-form").serialize();
+		var request = $.ajax({
+			method: 'post',
+			url: '/photos',
+			dataType: 'html',
+			data: data
+		})
+
+		request.done(function(data){
+			$('#new-photo-inner-content').remove();
+			$("#new-photo").show();
+		})
+
+	})
+}
+
+
