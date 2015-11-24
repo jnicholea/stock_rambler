@@ -1,0 +1,14 @@
+<div class="container">
+		<img id="filmstockquartet" src="../images_site/012-film-stock-gallery-800px.jpg">
+		
+		<h3 class="header">Header</h3>
+
+	  <a class="home-nav" href="/photos"> Home</a>
+	  <a class="home-nav" href="/users/<%= current_user.id %>"> User profile</a>
+	  <a id="new-photo" href="/photos/new">Submit new photo</a>
+
+
+	    <form class="right-nav" action="/logout" method="post">
+	    <input type="hidden" name = "_method" value="DELETE">
+    	<input class="btn" type="submit" value="Log Out">
+  		</form>

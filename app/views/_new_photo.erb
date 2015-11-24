@@ -1,0 +1,21 @@
+
+	<h1>Submit New Photo</h1>
+	<div>
+		<%= p @error %>
+	</div>
+	<form id="new-photo-form" action="/photos" method="post">
+		<input type="hidden" name="photo[photographer_id]" value="<% current_user.id%>"/>
+		<input type="text" name="photo[url]" placeholder="URL of photo (REQUIRED)"/>
+		<input type="text" name="photo[format]" placeholder="35mm or 120mm (REQUIRED)"/>
+		<input type="text" name="photo[stock]" placeholder="Fuji 400h, Portra 400, etc (REQUIRED)"/>
+		<input type="text" name="photo[camera]" placeholder="Camera"/>
+		<input type="text" name="photo[lens]" placeholder="Lens"/>
+		<input type="lighting" name="photo[lighting]" placeholder="Lighting conditions (REQUIRED)"/>
+		<input type="rating" name="photo[rating]" placeholder="100, 400, 800, etc"/>
+		<input type="lab" name="photo[lab]" placeholder="The Find Lab, State Film, etc"/>
+		<input type="processing" name="photo[processing]" placeholder="Push or pull? How many stops?"/>
+		<input type="scanner" name="photo[scanner]" placeholder="Noritsu or Frontier?"/>
+		<input type="expiration" name="photo[expiration]" placeholder="How long has the film been expired?"/>
+		<input type="submit" value="Add New Photo" />
+	</form>
+</div

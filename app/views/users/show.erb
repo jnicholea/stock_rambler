@@ -1,0 +1,16 @@
+<div class="inner-content">
+	<div>
+		<p>Username: <%= current_user.username %></p>
+		<p>Business Name: <%= current_user.business_name %></p>
+		<p>Email: <%= current_user.email %></p>
+
+	</div> 
+
+	<div>
+	<p>My Uploaded Photos</p>
+	<% @user.photos.each do |photo| %>
+		<a href="/photos/<%= photo.id %>"><img class="index-photos" src="<%= photo.url%>"/></a>
+	<% end %>
+	</div>
+</div>
+

@@ -1,4 +1,8 @@
+##index##
 get '/' do
-  # Look in app/views/index.erb
-  erb :index
+  redirect '/photos'
 end
+
+
+
+
